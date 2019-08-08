@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@id/overviewFragment">
+
+    <fragment android:id="@+id/overviewFragment" android:name="com.dawid.currencies.ui.ExchangeRatesOverviewFragment"
+              android:label="fragment_overview" tools:layout="@layout/fragment_exchange_rates_overview">
+        <action android:id="@+id/action_overviewFragment_to_exchangeRateDetailFragment"
+                app:destination="@id/exchangeRateDetailFragment"/>
+    </fragment>
+    <fragment android:id="@+id/exchangeRateDetailFragment"
+              android:name="com.dawid.currencies.ui.ExchangeRateDetailFragment"
+              android:label="ExchangeRateDetailFragment"
+              tools:layout="@layout/fragment_exchange_rate_detail">
+        <argument android:name="exchangeRate" app:argType="com.dawid.currencies.domain.ExchangeRate"/>
+        <argument android:name="transitionName" app:argType="string"/>
+    </fragment>
+    <fragment android:id="@+id/settings_fragment" android:name="com.dawid.currencies.ui.SettingsFragment"
+              android:label="fragment_settings" />
+    <fragment android:id="@+id/calculatorDialogFragment" android:name="com.dawid.currencies.ui.CalculatorDialogFragment"
+              android:label="fragment_calculator_dialog" tools:layout="@layout/fragment_calculator_dialog"/>
+</navigation>

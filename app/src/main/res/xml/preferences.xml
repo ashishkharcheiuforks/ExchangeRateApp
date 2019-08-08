@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+            android:title="Application Preferences">
+
+        <ListPreference
+                app:key="base_currency"
+                app:title="Base Currency"
+                app:useSimpleSummaryProvider="true"
+                android:icon="@drawable/ic_euro_symbol_black_24dp"
+                android:entries="@array/currencies"
+                android:entryValues="@array/currencies"
+                android:dialogTitle="@string/base_currency_dialog_title"
+                android:clickable="true" android:focusable="true" android:background="@drawable/ripple"/>
+        <ListPreference
+                app:key="refresh_rate"
+                app:title="Data Sync Interval"
+                app:useSimpleSummaryProvider="true"
+                android:icon="@drawable/ic_sync_black_24dp"
+                android:entries="@array/refresh_rate"
+                android:entryValues="@array/refresh_rate_value"
+                android:dialogTitle="@string/data_sync_dialog_title"
+                android:clickable="true" android:focusable="true" android:background="@drawable/ripple"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="About">
+
+        <Preference
+                android:key="author"
+                android:title="Dawid Kacperczyk"
+                android:summary="kacperczyk.dev@gmail.com"
+                android:clickable="true" android:focusable="true" android:background="@drawable/ripple"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

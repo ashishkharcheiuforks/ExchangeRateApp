@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel" type="com.dawid.currencies.viewmodels.CalculatorViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.CalculatorDialogFragment">
+        <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/currencySpinner"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_margin="@dimen/margin_padding_medium" app:layout_constraintEnd_toStartOf="@+id/amountEditTxt"
+                app:layout_constraintBottom_toBottomOf="@+id/amountEditTxt"
+                app:layout_constraintTop_toTopOf="@+id/amountEditTxt"
+                app:layout_constraintHorizontal_chainStyle="packed" app:layout_constraintVertical_bias="0.571"
+        />
+        <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="7"
+                app:layout_constraintEnd_toEndOf="parent" android:id="@+id/amountEditTxt"
+                android:marqueeRepeatLimit="marquee_forever" android:layout_margin="@dimen/margin_padding_medium"
+                app:layout_constraintTop_toBottomOf="@+id/result" app:layout_constraintStart_toEndOf="@+id/currencySpinner"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"
+                android:textColorHint="@color/colorSecondaryText" android:hint="Enter amount"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="EUR"
+                android:id="@+id/baseCurrency"
+                android:layout_margin="@dimen/margin_padding_medium"
+                app:layout_constraintTop_toTopOf="@+id/result" app:layout_constraintBottom_toBottomOf="@+id/result"
+                app:layout_constraintEnd_toStartOf="@+id/result"
+                app:layout_constraintStart_toStartOf="@+id/currencySpinner"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_marginStart="8dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/result"
+                android:text="@{@string/money_string(viewModel.result)}"
+                android:lines="1"
+                tools:text="123.45"
+                android:layout_margin="@dimen/margin_padding_medium"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginEnd="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/amountEditTxt" app:layout_constraintStart_toEndOf="@+id/baseCurrency"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_marginTop="96dp" android:ems="5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
