@@ -20,7 +20,7 @@ class CalculatorViewModel @Inject constructor(var repository: CurrenciesReposito
 
 
     init {
-        currency.value = "EUR"
+        currency.value = "CAD"
         _result.value = 0.0
     }
 

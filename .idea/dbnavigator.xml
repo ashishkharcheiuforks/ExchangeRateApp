@@ -24,13 +24,13 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5">
+      <connection connection-id="1825fb9e-d3e3-4b35-87ac-e0044cf0ae84">
         <schema name="main" object-types="index, column, constraint, dataset trigger, table, view" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5">
+    <connection id="1825fb9e-d3e3-4b35-87ac-e0044cf0ae84">
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
@@ -38,10 +38,14 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5" />
+    <connection id="1825fb9e-d3e3-4b35-87ac-e0044cf0ae84" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5" dataset="main.currency_rate" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="1825fb9e-d3e3-4b35-87ac-e0044cf0ae84" dataset="main.currency_rate" active-filter-id="e13f9940-4e16-46da-8de3-22c57e485097">
+      <filter id="e13f9940-4e16-46da-8de3-22c57e485097" name="Filter" temporary="false" custom-name="false" type="custom">
+        <condition><![CDATA[curr_code = 'CAD' and date = (select max(date) from currency_rate where curr_code = 'CAD')<br>-- enter your custom conditions here]]></condition>
+      </filter>
+    </filter-actions>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -66,7 +70,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5" active="true">
+      <connection id="1825fb9e-d3e3-4b35-87ac-e0044cf0ae84" active="true">
         <database>
           <name value="Connection" />
           <description value="" />

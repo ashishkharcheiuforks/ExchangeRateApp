@@ -6,7 +6,9 @@ import com.dawid.currencies.ui.CalculatorDialogFragment
 import com.dawid.currencies.ui.ExchangeRateDetailFragment
 import com.dawid.currencies.ui.ExchangeRatesOverviewFragment
 import com.dawid.currencies.ui.SettingsFragment
+import dagger.BindsInstance
 import dagger.Component
+import javax.inject.Named
 import javax.inject.Singleton
 
 

@@ -1,9 +1,7 @@
 package com.dawid.currencies.viewmodels
 
-import android.app.Application
 import android.content.SharedPreferences
 import androidx.lifecycle.*
-import androidx.preference.PreferenceManager
 import com.dawid.currencies.domain.ExchangeRate
 import com.dawid.currencies.repository.CurrenciesRepository
 import kotlinx.coroutines.CoroutineScope

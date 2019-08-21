@@ -7,9 +7,9 @@ import org.joda.time.DateTime
 class DateConverter {
 
     @TypeConverter
-    fun toLong(date: String) : Long = convertStringtoDateTime(date).toDate().time
+    fun toLong(date: String?) : Long? = if(date.isNullOrEmpty()) null else convertStringtoDateTime(date).toDate().time
 
     @TypeConverter
-    fun fromLong(date: Long) : String = DateTime(date).toString()
+    fun fromLong(date: Long?) : String? = if(date == null) null else DateTime(date).toString()
 
 }

@@ -1,6 +1,5 @@
 package com.dawid.currencies.ui
 
-import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -2,7 +2,6 @@ package com.dawid.currencies.database
 
 import androidx.room.*
 import com.dawid.currencies.domain.ExchangeRate
-import org.joda.time.DateTime
 
 @Entity(tableName = "currency_rate", primaryKeys = ["curr_code", "date"])
 data class DatabaseRate(
