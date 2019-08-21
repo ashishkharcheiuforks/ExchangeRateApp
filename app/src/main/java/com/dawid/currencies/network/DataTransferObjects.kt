@@ -2,6 +2,7 @@ package com.dawid.currencies.network
 
 import com.dawid.currencies.database.DatabaseRate
 import com.squareup.moshi.JsonClass
+import org.joda.time.DateTime
 
 @JsonClass(generateAdapter = true)
 data class CurrencyDTO(

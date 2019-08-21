@@ -28,6 +28,7 @@ class CurrenciesRepository @Inject constructor(var currenciesService: Currencies
     }
 
     suspend fun refreshData(baseCurrency: String = "EUR") {
+        clearAll()
         withContext(Dispatchers.IO) {
             database.currencyRateDao.clearAll()
             val rates = currenciesService.getExchangeRatesBetween(

@@ -11,10 +11,11 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class DatabaseModule {
+object DatabaseModule {
 
     @Provides
     @Singleton
+    @JvmStatic
     fun provideDatabase(application: Application) : CurrenciesDatabase =
         Room.databaseBuilder(
             application,
@@ -24,7 +25,7 @@ class DatabaseModule {
 
     @Provides
     @Singleton
-    fun provideCurrenciesRepository(currenciesService: CurrenciesService, database: CurrenciesDatabase) : CurrenciesRepository =
-        CurrenciesRepository(currenciesService, database)
-
+    @JvmStatic
+    fun provideCurrenciesRepository(currenciesService: CurrenciesService, database: CurrenciesDatabase)
+            : CurrenciesRepository = CurrenciesRepository(currenciesService, database)
 }

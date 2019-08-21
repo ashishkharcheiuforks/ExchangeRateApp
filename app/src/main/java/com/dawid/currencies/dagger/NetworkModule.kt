@@ -11,20 +11,20 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+object NetworkModule {
 
-    companion object {
-        private const val BASE_URL = "https://api.exchangeratesapi.io"
-    }
+    private const val BASE_URL = "https://api.exchangeratesapi.io"
 
     @Provides
     @Singleton
+    @JvmStatic
     fun provideMoshi(): Moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
 
     @Provides
     @Singleton
+    @JvmStatic
     fun provideRetrofit(moshi: Moshi) : Retrofit = Retrofit.Builder()
         .addConverterFactory(MoshiConverterFactory.create(moshi))
         .addCallAdapterFactory(CoroutineCallAdapterFactory())
@@ -33,9 +33,8 @@ class NetworkModule {
 
     @Provides
     @Singleton
+    @JvmStatic
     fun  provideCurrenciesService(retrofit: Retrofit) : CurrenciesService = retrofit.create(
         CurrenciesService::class.java
     )
-
-
 }

@@ -3,8 +3,9 @@ package com.dawid.currencies.util
 import org.joda.time.DateTime
 import org.joda.time.Instant
 import org.joda.time.format.DateTimeFormat
+import java.util.*
 
-fun convertStringtoDate(date: String, format: String = "yyyy-MM-dd"): DateTime {
+fun convertStringtoDateTime(date: String, format: String = "yyyy-MM-dd"): DateTime {
     return DateTime.parse(date, DateTimeFormat.forPattern(format))
 }
 

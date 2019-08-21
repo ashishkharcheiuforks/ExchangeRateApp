@@ -23,10 +23,14 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5">
+        <schema name="main" object-types="index, column, constraint, dataset trigger, table, view" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="d68f6590-b726-40c1-abbd-0867fe8231cb">
+    <connection id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5">
       <console name="Connection" type="STANDARD" schema="main" session="Main" />
     </connection>
   </component>
@@ -34,10 +38,10 @@
     <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
-    <connection id="d68f6590-b726-40c1-abbd-0867fe8231cb" />
+    <connection id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5" />
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="d68f6590-b726-40c1-abbd-0867fe8231cb" dataset="main.currency_rate" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5" dataset="main.currency_rate" active-filter-id="EMPTY_FILTER" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -62,7 +66,7 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="d68f6590-b726-40c1-abbd-0867fe8231cb" active="true">
+      <connection id="e6a68897-f6a9-4f1b-9b11-dffe7ed2c4d5" active="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -77,7 +81,7 @@
           <port value="1234" />
           <database value="database" />
           <files>
-            <file path="$PROJECT_DIR$/../currenciesdb" schema="main" />
+            <file path="$PROJECT_DIR$/../../currencies" schema="main" />
           </files>
           <type value="NONE" />
           <user value="" />

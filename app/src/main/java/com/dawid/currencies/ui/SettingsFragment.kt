@@ -24,7 +24,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 "base_currency" -> viewModel.refreshData()
                 "refresh_rate" -> {
                     val refreshRate = sharedPreferences.getString(key, "8.0")!!
-                    (activity?.application as CurrenciesApplication).scheduleWork(refreshRate.toDouble())
+                    (activity?.application as CurrenciesApplication).scheduleWork(refreshRate.toInt())
                 }
             }
             Toast.makeText(this.requireContext(), "Preferences updated", Toast.LENGTH_SHORT).show()

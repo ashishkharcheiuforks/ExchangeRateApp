@@ -1,15 +1,14 @@
 package com.dawid.currencies.database
 
-import androidx.room.ColumnInfo
-import androidx.room.Embedded
-import androidx.room.Entity
-import androidx.room.Ignore
+import androidx.room.*
 import com.dawid.currencies.domain.ExchangeRate
+import org.joda.time.DateTime
 
 @Entity(tableName = "currency_rate", primaryKeys = ["curr_code", "date"])
 data class DatabaseRate(
     @ColumnInfo(name = "curr_code")
     val currencyCode: String,
+    @TypeConverters(DateConverter::class)
     val date: String,
     @ColumnInfo(name = "base_curr")
     val base: String,

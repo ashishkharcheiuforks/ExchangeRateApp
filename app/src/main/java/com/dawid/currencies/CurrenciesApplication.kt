@@ -27,20 +27,19 @@ class CurrenciesApplication : Application() {
     private fun initDagger(app: CurrenciesApplication): AppComponent =
         DaggerAppComponent.builder()
             .appModule(AppModule(app))
-            .networkModule(NetworkModule())
-            .databaseModule(DatabaseModule())
             .build()
 
-    fun scheduleWork(intervalHours: Double = 8.0) {
-        Timber.i("SCHEDULED: $intervalHours")
+    fun scheduleWork(intervalMinutes: Int = 480) {
+        Timber.i("SCHEDULED: $intervalMinutes")
         val constraints = Constraints.Builder()
             .setRequiresBatteryNotLow(true)
+            .setRequiredNetworkType(NetworkType.CONNECTED)
             .apply {
                 if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                     setRequiresDeviceIdle(true)
                 }
             }.build()
-        val reccuringWork: PeriodicWorkRequest = PeriodicWorkRequestBuilder<RefreshDataWorker>(intervalHours.toLong(), TimeUnit.HOURS)
+        val reccuringWork: PeriodicWorkRequest = PeriodicWorkRequestBuilder<RefreshDataWorker>(intervalMinutes.toLong(), TimeUnit.MINUTES)
             .setConstraints(constraints)
             .build()
         WorkManager.getInstance(applicationContext).enqueueUniquePeriodicWork(

@@ -9,7 +9,7 @@
     <dimen name="text_size_xxlarge">45sp</dimen>
     <dimen name="text_size_xxxlarge">56sp</dimen>
 
-    <!-- Margins -->
+    <!-- Margins & padding -->
     <dimen name="margin_padding_small">8dp</dimen>
     <dimen name="margin_padding_medium">16dp</dimen>
     <dimen name="margin_padding_large">24dp</dimen>

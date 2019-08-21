@@ -1,11 +1,10 @@
 package com.dawid.currencies.domain
 
 import android.os.Parcelable
-import com.dawid.currencies.util.convertStringtoDate
+import com.dawid.currencies.util.convertStringtoDateTime
 import com.github.mikephil.charting.data.Entry
 import kotlinx.android.parcel.Parcelize
 import org.joda.time.DateTimeZone
-import java.time.LocalTime
 
 
 @Parcelize
@@ -20,7 +19,7 @@ data class ExchangeRate(
 
 fun List<ExchangeRate>.asChartEntry() : List<Entry> {
     return map {
-        val date = convertStringtoDate(it.date)
+        val date = convertStringtoDateTime(it.date)
         Entry(date.toDateTime(DateTimeZone.getDefault()).millis.toFloat(), 1/it.value.toFloat())
     }
 }

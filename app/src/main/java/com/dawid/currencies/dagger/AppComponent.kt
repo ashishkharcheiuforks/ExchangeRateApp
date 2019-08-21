@@ -1,5 +1,6 @@
 package com.dawid.currencies.dagger
 
+import com.dawid.currencies.dagger.viewmodel.ViewModelFactoryModule
 import com.dawid.currencies.dagger.viewmodel.ViewModelModule
 import com.dawid.currencies.ui.CalculatorDialogFragment
 import com.dawid.currencies.ui.ExchangeRateDetailFragment

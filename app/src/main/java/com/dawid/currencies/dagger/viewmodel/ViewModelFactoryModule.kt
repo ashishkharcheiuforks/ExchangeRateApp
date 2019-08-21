@@ -1,4 +1,4 @@
-package com.dawid.currencies.dagger
+package com.dawid.currencies.dagger.viewmodel
 
 import androidx.lifecycle.ViewModelProvider
 import com.dawid.currencies.viewmodels.ViewModelFactory
