@@ -7,7 +7,6 @@ import com.dawid.currencies.domain.ExchangeRate
 data class DatabaseRate(
     @ColumnInfo(name = "curr_code")
     val currencyCode: String,
-    @TypeConverters(DateConverter::class)
     val date: String,
     @ColumnInfo(name = "base_curr")
     val base: String,

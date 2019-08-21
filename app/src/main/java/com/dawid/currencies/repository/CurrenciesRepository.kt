@@ -40,7 +40,7 @@ class CurrenciesRepository @Inject constructor(var currenciesService: Currencies
         }
     }
 
-    suspend fun clearAll() {
+    private suspend fun clearAll() {
         withContext(Dispatchers.IO) {
             database.currencyRateDao.clearAll()
         }
